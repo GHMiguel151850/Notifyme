@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/notifyme/BuildConfig.java
+ com.notifyme.BuildConfig
+com/notifyme/MainActivity.java
+ com.notifyme.MainActivity
