@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">249405778678-astb1jsqrgvfgd62d2t1l94ue6a1jj4n.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">249405778678</string>
+    <string name="google_api_key" translatable="false">AIzaSyBQ81qvY7nxdhPlqe73L46CQ6cnveS71hE</string>
+    <string name="google_app_id" translatable="false">1:249405778678:android:d0d756c59d197808a05ad7</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQ81qvY7nxdhPlqe73L46CQ6cnveS71hE</string>
+    <string name="google_storage_bucket" translatable="false">miguelmobile-7b961.appspot.com</string>
+    <string name="project_id" translatable="false">miguelmobile-7b961</string>
+</resources>

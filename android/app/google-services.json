@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "249405778678",
+    "project_id": "miguelmobile-7b961",
+    "storage_bucket": "miguelmobile-7b961.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249405778678:android:d0d756c59d197808a05ad7",
+        "android_client_info": {
+          "package_name": "com.notifyme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249405778678-astb1jsqrgvfgd62d2t1l94ue6a1jj4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ81qvY7nxdhPlqe73L46CQ6cnveS71hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249405778678-astb1jsqrgvfgd62d2t1l94ue6a1jj4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

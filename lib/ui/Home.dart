@@ -1,6 +1,8 @@
 import 'package:date_time_picker/date_time_picker.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:notifyme/Database/repository.dart';
 import 'package:notifyme/Models/ScheduledNotification.dart';
 import 'package:notifyme/ui/LoginDrawer.dart';
 import 'package:notifyme/ui/NotificationList.dart';
@@ -15,6 +17,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+  String _message = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,8 +76,45 @@ class _HomeState extends State<Home> {
           );
         });
     setState(() {
-      widget.notificationList
-          .add(new ScheduledNotification('ADICIONEI', DateTime.now()));
+      var newNotification =
+          new ScheduledNotification('ADICIONEI', DateTime.now());
+      RepositoryServiceNotification.addNotification(newNotification);
+      widget.notificationList.add(newNotification);
+    });
+  }
+
+  _registerOnFirebase() {
+    _firebaseMessaging.subscribeToTopic('all');
+    _firebaseMessaging.getToken().then((token) => print(token));
+  }
+
+  @override
+  void initState() {
+    _registerOnFirebase();
+    getMessage();
+    super.initState();
+  }
+
+  void getMessage() {
+    _firebaseMessaging.configure(
+        onMessage: (Map<String, dynamic> message) async {
+      print('received message');
+      setState(() {
+        widget.notificationList.add(new ScheduledNotification(
+            message["notification"]["body"], DateTime.now()));
+      });
+    }, onResume: (Map<String, dynamic> message) async {
+      print('on resume $message');
+      setState(() {
+        widget.notificationList.add(new ScheduledNotification(
+            message["notification"]["body"], DateTime.now()));
+      });
+    }, onLaunch: (Map<String, dynamic> message) async {
+      print('on launch $message');
+      setState(() {
+        widget.notificationList.add(new ScheduledNotification(
+            message["notification"]["body"], DateTime.now()));
+      });
     });
   }
 }
